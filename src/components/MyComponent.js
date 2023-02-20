@@ -4,16 +4,23 @@ import UserInfo from './UserInfo';
 
 class MyComponent extends React.Component {
 
-
+    state = {
+        listUsers: [
+            { id: 1, name: "hoi dan it", age: "30" },
+            { id: 2, name: "Long Pham", age: "23" },
+            { id: 3, name: "dev", age: "21" }
+        ]
+    }
     //jsx
     render() {
 
         return (
             <div>
-
                 <UserInfo />
                 <br></br>
-                <DisplayInfo name="Long Pham" age="30" />
+
+
+                <DisplayInfo listUsers={this.state.listUsers} />
             </div>
         )
     }
