@@ -6,43 +6,12 @@ import MyComponent from './components/MyComponent';
 import React from 'react';
 
 class App extends React.Component {
-
-  state = {
-    name: "Long Pham",
-    address: '2805 Parliament Ave',
-    age: 23
-  };
-
-
-  handleClick(event) {
-    console.log('click')
-    console.log("My name is", this.state.name)
-
-    this.setState({
-      name: 'Rocky',
-    })
-
-    this.setState({
-      age: Math.floor((Math.random() * 100) + 1)
-
-    })
-  }
-
-  // handleOnMouseOver(event) {
-  //   console.log(event);
-  // }
-
   render() {
     return (
-      <div>
-        My name is {this.state.name}, I'm {this.state.age} years old and I'm from {this.state.address}
-
-        {/* 
-        <button onMouseOver={this.handleOnMouseOver}>Hover me</button> */}
-        <button onClick={(event) => this.handleClick(event)}>CLick me</button>
-      </div>
+      <MyComponent></MyComponent>
     )
   }
+
 }
 
 // const App = () => {
