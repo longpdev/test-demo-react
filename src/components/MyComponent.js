@@ -1,6 +1,10 @@
 import React from 'react';
 
 class MyComponent extends React.Component {
+
+    //bad code
+    // this.state.age = event.target.value //avoid this
+
     state = {
         name: "Long Pham",
         address: '2805 Parliament Ave',
@@ -21,6 +25,12 @@ class MyComponent extends React.Component {
         })
     }
 
+    handleOnChangeAge = (event) => {
+        this.setState({
+            age: event.target.value
+        })
+    }
+
     handleOnSubmit = (event) => {
         event.preventDefault()
         console.log(this.state)
@@ -33,9 +43,17 @@ class MyComponent extends React.Component {
             <div>
                 My name is {this.state.name}, I'm {this.state.age} years old and I'm from {this.state.address}
                 <form onSubmit={(event) => this.handleOnSubmit(event)}>
+                    <label>Your name:</label>
                     <input
+                        value={this.state.name}
                         type="text"
                         onChange={(event) => this.handleOnChangeinput(event)}
+                    />
+                    <label>Your age:</label>
+                    <input
+                        value={this.state.age}
+                        type="text"
+                        onChange={(event) => this.handleOnChangeAge(event)}
                     />
                     <button onClick={(event) => this.handleClick(event)}>Submit</button>
                 </form>
