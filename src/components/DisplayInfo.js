@@ -1,5 +1,6 @@
 import React from "react";
 import './DisplayInfo.scss';
+import logo from "./../logo.svg";
 
 class DisplayInfo extends React.Component {
     state = {
@@ -19,13 +20,14 @@ class DisplayInfo extends React.Component {
         const { listUsers } = this.props; //object
         return (
             //prop -> property
-            <div>
+            <div className="display-info-container">
+                <img src={logo} />
                 <div>
                     <span onClick={() => { this.handleShowHide() }}> {this.state.isShowListUser ? "Hide" : "Show"} list user: </span>
                 </div>
                 {this.state.isShowListUser
                     &&
-                    <div className="display-info-container">
+                    <div>
                         {
                             listUsers.map((user) => {
                                 return (
