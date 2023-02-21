@@ -1,4 +1,5 @@
 import React from "react";
+import './DisplayInfo.scss';
 
 class DisplayInfo extends React.Component {
     state = {
@@ -24,7 +25,7 @@ class DisplayInfo extends React.Component {
                 </div>
                 {this.state.isShowListUser
                     &&
-                    <div >
+                    <div className="display-info-container">
                         {
                             listUsers.map((user) => {
                                 return (
